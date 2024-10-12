@@ -3,16 +3,34 @@
 @tailwind utilities;
 
 @layer base {
-  body {
-    color: var(--foreground);
-    background: var(--background);
-    font-family: Arial, Helvetica, sans-serif;
+   :root {
+    --background: 27 27 27;
+    --foreground: 225 225 225;
+    --muted: 115 115 115;
+    --accent: 254 254 91;
   }
 
 }
 
 @layer utilities {
-  .text-balance {
-    text-wrap: balance;
+  .pause {
+    animation-play-state: paused;
+  }
+
+   .c-space {
+    @apply sm:px-10 px-5;
+  }
+
+  .custom-bg {
+    @apply bg-background/20 border border-accent/30 border-solid backdrop-blur-[6px] shadow-glass-inset hover:shadow-glass-sm;
+  }
+}
+
+@keyframes move {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(100px, 100px);
   }
 }

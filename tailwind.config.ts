@@ -10,8 +10,14 @@ module.exports = {
 	theme: {
 		extend: {
 			colors: {
-				background: "var(--background)",
-				foreground: "var(--foreground)",
+				background: "rgb(var(--background))",
+				foreground: "rgb(var(--foreground))",
+				muted: "rgb(var(--muted))",
+				accent: "rgb(var(--accent))",
+			},
+			boxShadow: {
+				"glass-inset": "inset 0 17px 5px -9px rgba(254,254,91, 0.05)",
+				"glass-sm": "5px 5px 20px 0px rgba(254,254,91, 0.3)",
 			},
 			animation: {
 				spotlight: "spotlight 2s ease .75s 1 forwards",
@@ -27,6 +33,9 @@ module.exports = {
 						transform: "translate(-50%,-40%) scale(1)",
 					},
 				},
+			},
+			screens: {
+				xs: "480px",
 			},
 		},
 	},

@@ -39,31 +39,26 @@ const StarsAndSpotlight = () => {
 			<ShootingStars
 				starColor="#FF6A00"
 				trailColor="#2EB9DF"
-				starWidth={15}
 				className="min-h-screen"
 			/>
 			<ShootingStars
 				starColor="#FF6A00"
 				trailColor="#2EB9DF"
-				starWidth={15}
 				className="min-h-screen"
 			/>
 			<ShootingStars
 				starColor="#FF6A00"
 				trailColor="#2EB9DF"
-				starWidth={15}
 				className="min-h-screen"
 			/>
 			<ShootingStars
 				starColor="#FF6A00"
 				trailColor="#2EB9DF"
-				starWidth={15}
 				className="min-h-screen"
 			/>
 			<ShootingStars
 				starColor="#fff"
 				trailColor="#2EB9DF"
-				starWidth={15}
 				className="min-h-screen"
 			/>
 		</Fragment>
