@@ -25,8 +25,8 @@ interface ShootingStarsProps {
 }
 
 const getRandomStartPoint = () => {
-	const x = -(Math.random() * window.innerWidth);
-	return { x, y: 0, angle: 45 };
+	const randomX = Math.random() * window.innerWidth + 800;
+	return { x: randomX, y: 0, angle: 145 };
 };
 export const ShootingStars: React.FC<ShootingStarsProps> = ({
 	minSpeed = 10,
@@ -51,13 +51,12 @@ export const ShootingStars: React.FC<ShootingStarsProps> = ({
 				y,
 				angle,
 				scale: 1,
-				speed: Math.random() * (maxSpeed - minSpeed) + minSpeed,
+				speed: 10,
 				distance: 0,
 			};
 			setStar(newStar);
 
-			const randomDelay =
-				Math.random() * (maxDelay - minDelay) + minDelay;
+			const randomDelay = maxDelay - minDelay + minDelay;
 			setTimeout(createStar, randomDelay);
 		};
 

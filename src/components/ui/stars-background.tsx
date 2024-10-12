@@ -14,6 +14,8 @@ interface StarProps {
 	radius: number;
 	opacity: number;
 	twinkleSpeed: number | null;
+	initialX: number;
+	initialY: number;
 }
 
 interface StarBackgroundProps {
@@ -34,6 +36,7 @@ export const StarsBackground: React.FC<StarBackgroundProps> = ({
 	className,
 }) => {
 	const [stars, setStars] = useState<StarProps[]>([]);
+	const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 	const canvasRef: RefObject<HTMLCanvasElement> =
 		useRef<HTMLCanvasElement>(null);
 
@@ -44,9 +47,14 @@ export const StarsBackground: React.FC<StarBackgroundProps> = ({
 			return Array.from({ length: numStars }, () => {
 				const shouldTwinkle =
 					allStarsTwinkle || Math.random() < twinkleProbability;
+				const x = Math.random() * width;
+				const y = Math.random() * height;
+
 				return {
-					x: Math.random() * width,
-					y: Math.random() * height,
+					x,
+					y,
+					initialX: x,
+					initialY: y,
 					radius: Math.random() * 0.05 + 0.5,
 					opacity: Math.random() * 0.5 + 0.5,
 					twinkleSpeed: shouldTwinkle
@@ -100,6 +108,17 @@ export const StarsBackground: React.FC<StarBackgroundProps> = ({
 		generateStars,
 	]);
 
+	// Handle mouse movement to create a parallax effect
+	const handleMouseMove = (e: MouseEvent) => {
+		if (canvasRef.current) {
+			const canvas = canvasRef.current;
+			const { left, top, width, height } = canvas.getBoundingClientRect();
+			const mouseX = (e.clientX - left) / width;
+			const mouseY = (e.clientY - top) / height;
+			setMousePosition({ x: mouseX, y: mouseY });
+		}
+	};
+
 	useEffect(() => {
 		const canvas = canvasRef.current;
 		if (!canvas) return;
@@ -111,9 +130,16 @@ export const StarsBackground: React.FC<StarBackgroundProps> = ({
 
 		const render = () => {
 			ctx.clearRect(0, 0, canvas.width, canvas.height);
+
 			stars.forEach((star) => {
+				const parallaxX = (mousePosition.x - 0.5) * 20; // Adjust parallax sensitivity
+				const parallaxY = (mousePosition.y - 0.5) * 20;
+
+				const newX = star.initialX + parallaxX;
+				const newY = star.initialY + parallaxY;
+
 				ctx.beginPath();
-				ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
+				ctx.arc(newX, newY, star.radius, 0, Math.PI * 2);
 				ctx.fillStyle = `rgba(255, 255, 255, ${star.opacity})`;
 				ctx.fill();
 
@@ -135,7 +161,15 @@ export const StarsBackground: React.FC<StarBackgroundProps> = ({
 		return () => {
 			cancelAnimationFrame(animationFrameId);
 		};
-	}, [stars]);
+	}, [stars, mousePosition]);
+
+	useEffect(() => {
+		window.addEventListener("mousemove", handleMouseMove);
+
+		return () => {
+			window.removeEventListener("mousemove", handleMouseMove);
+		};
+	}, []);
 
 	return (
 		<canvas
