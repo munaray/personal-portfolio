@@ -1,5 +1,7 @@
+"use client";
+
 import StarsAndSpotlight from "./hero-components/stars-spotlight";
-import Header from "./hero-components/header";
+import Header from "@/components/header";
 
 const Hero = () => {
 	return (

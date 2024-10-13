@@ -15,10 +15,15 @@ module.exports = {
 				muted: "rgb(var(--muted))",
 				accent: "rgb(var(--accent))",
 			},
+			// boxShadow: {
+			// 	"glass-inset": "inset 0 17px 5px -9px rgba(254,254,91, 0.05)",
+			// 	"glass-sm": "5px 5px 20px 0px rgba(254,254,91, 0.3)",
+			// },
 			boxShadow: {
-				"glass-inset": "inset 0 17px 5px -9px rgba(254,254,91, 0.05)",
-				"glass-sm": "5px 5px 20px 0px rgba(254,254,91, 0.3)",
+				"glass-inset": "inset 0 17px 5px -9px rgba(255, 60, 0, 0.05)",
+				"glass-sm": "5px 5px 20px 0px rgba(255, 60, 0, 0.3)",
 			},
+
 			animation: {
 				spotlight: "spotlight 2s ease .75s 1 forwards",
 			},
