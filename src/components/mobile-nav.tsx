@@ -1,8 +1,8 @@
 import { ShieldCheck, Sparkles, Copyright } from "lucide-react";
 import Link from "next/link";
 
-import { TopBarNav } from "./header";
 import { SOCIAL_ICONS } from "@/constants";
+import TopBarNav from "./navbar/topbar-nav";
 
 const MobileNav = ({
 	isMenuOpen,
@@ -22,7 +22,7 @@ const MobileNav = ({
 				className={`button z-50 relative overflow-hidden rounded-full ${
 					isMenuOpen
 						? "bg-white text-gray-700"
-						: "bg-background/60 custom-bg"
+						: "bg-background/60 glass !shadow-glass-inset"
 				}`}
 				onClick={toggleMenu}
 				aria-expanded={isMenuOpen}>
@@ -36,7 +36,7 @@ const MobileNav = ({
 						transformOrigin: "center",
 					}}
 					viewBox="-10 -10 120 120"
-					width="45">
+					width="40">
 					<path
 						className={`line transition-all duration-1000 ${
 							isMenuOpen
@@ -70,27 +70,27 @@ const MobileNav = ({
 						href="#ask-ai"
 						name="Ask AI About me"
 						icon={Sparkles}
-						className="mb-4 flex justify-between items-center !text-2xl px-6 py-6"
-						iconClassName="h-10 w-10"
+						className="mb-4 flex justify-between items-center !text-xl px-6 py-6"
+						iconClassName="h-7 w-7"
 					/>
 					<TopBarNav
 						href="#verify"
 						name="verify on blockchain"
 						icon={ShieldCheck}
-						className="flex justify-between items-center !text-2xl px-6 py-6"
-						iconClassName="h-10 w-10 bg-blue-500"
+						className="flex justify-between items-center !text-xl px-6 py-6"
+						iconClassName="h-6 w-6 bg-blue-500"
 					/>
 
-					<p className="uppercase text-lg font-bold text-gray-500 mt-32 text-center">
+					<p className="uppercase text-sm font-bold text-gray-500 mt-12 text-center">
 						my socials
 					</p>
-					<ul className="my-12 flex gap-4 justify-center">
+					<ul className="my-10 flex gap-4 justify-center">
 						{SOCIAL_ICONS.map(({ name, icon: Icon, href }) => (
 							<li
 								key={name}
-								className="custom-bg p-3 rounded-full flex justify-center items-center hover:scale-105 transition-all duration-300">
+								className="glass !shadow-glass-inset p-3 rounded-full flex justify-center items-center hover:scale-150 transition-all duration-300">
 								<Link href={href}>
-									<Icon className="h-7 w-7 " />
+									<Icon className="h-4 w-4 " />
 								</Link>
 							</li>
 						))}

@@ -1,16 +1,14 @@
 "use client";
 
 import StarsAndSpotlight from "./hero-components/stars-spotlight";
-import Header from "@/components/header";
 
 const Hero = () => {
 	return (
-		<div className="relative w-full">
-			<div className="absolute">
-				<Header />
+		<section className="relative w-full">
+			<div className="fixed inset-0 -z-10">
+				<StarsAndSpotlight />
 			</div>
-			<StarsAndSpotlight />
-		</div>
+		</section>
 	);
 };
 

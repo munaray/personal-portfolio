@@ -8,6 +8,15 @@ import {
 	FaDev,
 } from "react-icons/fa6";
 
+import {
+	House,
+	Contact,
+	BriefcaseBusiness,
+	HandPlatter,
+	Phone,
+	LucideIcon,
+} from "lucide-react";
+
 export const SOCIAL_ICONS: { name: string; icon: IconType; href: string }[] = [
 	{
 		name: "Github",
@@ -41,30 +50,31 @@ export const SOCIAL_ICONS: { name: string; icon: IconType; href: string }[] = [
 	},
 ];
 
-export const SIDE_NAVs = [
-	{
-		id: 1,
-		name: "Home",
-		href: "#home",
-	},
-	{
-		id: 2,
-		name: "About",
-		href: "#about",
-	},
-	{
-		id: 3,
-		name: "Work",
-		href: "#work",
-	},
-	{
-		id: 4,
-		name: "Services",
-		href: "#services",
-	},
-	{
-		id: 5,
-		name: "Contact",
-		href: "#contact",
-	},
-];
+export const SIDEBAR_NAVs: { name: string; icon: LucideIcon; href: string }[] =
+	[
+		{
+			name: "Home",
+			href: "#home",
+			icon: House,
+		},
+		{
+			name: "About",
+			href: "#about",
+			icon: Contact,
+		},
+		{
+			name: "Work",
+			href: "#work",
+			icon: BriefcaseBusiness,
+		},
+		{
+			name: "Services",
+			href: "#services",
+			icon: HandPlatter,
+		},
+		{
+			name: "Contact",
+			href: "#contact",
+			icon: Phone,
+		},
+	];
