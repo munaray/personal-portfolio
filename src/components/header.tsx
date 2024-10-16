@@ -7,8 +7,8 @@ import { useMediaQuery } from "react-responsive";
 import { Download, ShieldCheck, Sparkles } from "lucide-react";
 import { gsap } from "gsap";
 
-import MobileNav from "../mobile-nav";
-import TopBarNav from "./topbar-nav";
+import MobileNav from "./navbar/mobile-nav";
+import TopBarNav from "./navbar/topbar-nav";
 
 const Header = () => {
 	const [isMounted, setIsMounted] = useState(false);

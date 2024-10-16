@@ -1,12 +1,20 @@
 "use client";
 
-import StarsAndSpotlight from "./hero-components/stars-spotlight";
+
+import StarsAndSpotlight from "./stars-spotlight";
 
 const Hero = () => {
 	return (
-		<section className="relative w-full">
-			<div className="fixed inset-0 -z-10">
-				<StarsAndSpotlight />
+		<section id="home" className="w-full relative">
+			<StarsAndSpotlight />
+			<div className="z-100 absolute top-[30vh] left-[20vw] right-[10vw]">
+				<section className="flex gap-10">
+					{/* Right side */}
+					<article className="flex-1">Name</article>
+
+					{/* Left Side */}
+					<figure className="flex-1">globe</figure>
+				</section>
 			</div>
 		</section>
 	);

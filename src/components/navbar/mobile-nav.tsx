@@ -2,7 +2,7 @@ import { ShieldCheck, Sparkles, Copyright } from "lucide-react";
 import Link from "next/link";
 
 import { SOCIAL_ICONS } from "@/constants";
-import TopBarNav from "./navbar/topbar-nav";
+import TopBarNav from "./topbar-nav";
 
 const MobileNav = ({
 	isMenuOpen,
