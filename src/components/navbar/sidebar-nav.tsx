@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useMemo, useState } from "react";
 import { useMediaQuery } from "react-responsive";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
@@ -9,9 +9,9 @@ import { gsap } from "gsap";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 import { motion } from "framer-motion";
 
-gsap.registerPlugin(ScrollToPlugin);
-
 import { SIDEBAR_NAVs } from "@/constants";
+
+gsap.registerPlugin(ScrollToPlugin);
 
 interface SidebarLinkProps {
 	href: string;
@@ -28,16 +28,46 @@ const SidebarLink = ({
 }: SidebarLinkProps) => {
 	const router = useRouter();
 
-	// eslint-disable-next-line @typescript-eslint/no-explicit-any
-	const handleScrollTo = (e: any) => {
-		e.preventDefault();
-		gsap.to(window, {
-			duration: 1.5,
-			scrollTo: href,
-			ease: "power2.inOut",
-		});
-		router.push(href, { scroll: true });
-	};
+	// Click Sound Effect by <a href="https://pixabay.com/users/irinairinafomicheva-25140203/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=13693">irinairinafomicheva</a> from <a href="https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=13693">Pixabay</a>
+	const clickSound = useMemo(
+		() => new Howl({ src: ["/click.mp3"], volume: 0.5 }),
+		[]
+	);
+
+	const hoverSound = useMemo(
+		() => new Howl({ src: ["/hover.mp3"], volume: 0.5 }),
+		[]
+	);
+
+	const handleHover = useCallback(() => {
+		hoverSound.play();
+	}, [hoverSound]);
+
+	const handleScrollTo = useCallback(
+		(e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
+			e.preventDefault();
+
+			clickSound.play();
+
+			gsap.to(window, {
+				duration: 1.5,
+				scrollTo: href,
+				ease: "power2.inOut",
+			});
+
+			router.push(href);
+		},
+		[clickSound, href, router]
+	);
+	// const handleScrollTo = (e: any) => {
+	// 	e.preventDefault();
+	// 	gsap.to(window, {
+	// 		duration: 1.5,
+	// 		scrollTo: href,
+	// 		ease: "power2.inOut",
+	// 	});
+	// 	router.push(href, { scroll: true });
+	// };
 
 	return (
 		<div
@@ -46,7 +76,10 @@ const SidebarLink = ({
 					? "border h-10 w-10 rounded-full p-1 flex items-center justify-center"
 					: ""
 			} `}>
-			<Link href={href} onClick={handleScrollTo}>
+			<Link
+				href={href}
+				onClick={handleScrollTo}
+				onMouseEnter={handleHover}>
 				<motion.div
 					initial={{ scale: 1 }}
 					whileHover={{ scale: 1.1 }}

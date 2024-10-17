@@ -31,6 +31,7 @@
         -webkit-backdrop-filter: blur(10px);
         border: 0.5px solid rgba(255, 255, 255, 0.18);
         box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+      animation: flow-shadow cubic-bezier(0.25, 0.1, 0.25, 1) infinite;
       }
 
 .button {
@@ -57,11 +58,25 @@
 }
 }
 
+
 @keyframes move {
   0% {
     transform: translate(0, 0);
   }
   100% {
     transform: translate(100px, 100px);
+  }
+}
+@keyframes flow-shadow {
+  0% {
+    box-shadow: inset 5px 5px 20px 0px rgba(255, 255, 255, 0.18);
+  }
+
+  50% {
+    box-shadow: inset -5px 5px 20px 0px rgba(255, 255, 255, 0.18);
+  }
+
+  100% {
+    box-shadow: inset 5px 5px 20px 0px rgba(255, 255, 255, 0.18);
   }
 }

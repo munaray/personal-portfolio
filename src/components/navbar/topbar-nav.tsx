@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { useCallback, useMemo } from "react";
 
 interface TopBarProps {
 	href: string;
@@ -15,9 +16,19 @@ const TopBarNav = ({
 	className,
 	iconClassName,
 }: TopBarProps) => {
+	const clickSound = useMemo(
+		() => new Howl({ src: ["/click.mp3"], volume: 0.5 }),
+		[]
+	);
+
+	const handleClick = useCallback(() => {
+		clickSound.play();
+	}, [clickSound]);
+
 	return (
 		<Link
 			href={href}
+			onClick={handleClick}
 			className={`flex gap-3 items-center justify-center glass !shadow-glass-inset !bg-background/50 py-2 px-3 lg:px-4 text-sm rounded-full uppercase ${className}`}>
 			{name}
 			<Icon

@@ -2,7 +2,14 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { Fragment, useEffect, useRef, useState } from "react";
+import {
+	Fragment,
+	useCallback,
+	useEffect,
+	useMemo,
+	useRef,
+	useState,
+} from "react";
 import { useMediaQuery } from "react-responsive";
 import { Download, ShieldCheck, Sparkles } from "lucide-react";
 import { gsap } from "gsap";
@@ -15,6 +22,15 @@ const Header = () => {
 
 	const isTabletAndAbove = useMediaQuery({ query: "(min-width: 768px)" });
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+	const clickSound = useMemo(
+		() => new Howl({ src: ["/click.mp3"], volume: 0.5 }),
+		[]
+	);
+
+	const handleClick = useCallback(() => {
+		clickSound.play();
+	}, [clickSound]);
 
 	/* Animate logo using gsap */
 	const logoRef = useRef(null);
@@ -62,6 +78,7 @@ const Header = () => {
 					<Fragment>
 						<Link
 							href="/"
+							onClick={handleClick}
 							className="flex justify-center items-center gap-1.5">
 							<Image
 								src={"/logo.png"}
@@ -74,7 +91,7 @@ const Header = () => {
 								onMouseLeave={handleMouseLeave}
 							/>
 							<div className="text-white font-bold text-2xl hover:text-neutral-400 transition-colors">
-								Munaray
+								munaray
 							</div>
 						</Link>
 
@@ -100,6 +117,7 @@ const Header = () => {
 					<Fragment>
 						<Link
 							href="/"
+							onClick={handleClick}
 							className="flex justify-center items-center gap-1.5 z-50">
 							<Image
 								src={"/logo.png"}
