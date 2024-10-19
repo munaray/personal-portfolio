@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useCallback, useEffect, useMemo, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { useMediaQuery } from "react-responsive";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
@@ -9,7 +9,9 @@ import { gsap } from "gsap";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 import { motion } from "framer-motion";
 
+
 import { SIDEBAR_NAVs } from "@/constants";
+import { useAudioStore } from "@/store/use-audio-store";
 
 gsap.registerPlugin(ScrollToPlugin);
 
@@ -27,27 +29,13 @@ const SidebarLink = ({
 	isActive,
 }: SidebarLinkProps) => {
 	const router = useRouter();
-
-	// Click Sound Effect by <a href="https://pixabay.com/users/irinairinafomicheva-25140203/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=13693">irinairinafomicheva</a> from <a href="https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=13693">Pixabay</a>
-	const clickSound = useMemo(
-		() => new Howl({ src: ["/click.mp3"], volume: 0.5 }),
-		[]
-	);
-
-	const hoverSound = useMemo(
-		() => new Howl({ src: ["/hover.mp3"], volume: 0.5 }),
-		[]
-	);
-
-	const handleHover = useCallback(() => {
-		hoverSound.play();
-	}, [hoverSound]);
+	const { playClickSound, playHoverSound } = useAudioStore();
 
 	const handleScrollTo = useCallback(
 		(e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
 			e.preventDefault();
 
-			clickSound.play();
+			playClickSound();
 
 			gsap.to(window, {
 				duration: 1.5,
@@ -57,17 +45,8 @@ const SidebarLink = ({
 
 			router.push(href);
 		},
-		[clickSound, href, router]
+		[playClickSound, href, router]
 	);
-	// const handleScrollTo = (e: any) => {
-	// 	e.preventDefault();
-	// 	gsap.to(window, {
-	// 		duration: 1.5,
-	// 		scrollTo: href,
-	// 		ease: "power2.inOut",
-	// 	});
-	// 	router.push(href, { scroll: true });
-	// };
 
 	return (
 		<div
@@ -79,7 +58,7 @@ const SidebarLink = ({
 			<Link
 				href={href}
 				onClick={handleScrollTo}
-				onMouseEnter={handleHover}>
+				onMouseEnter={playHoverSound}>
 				<motion.div
 					initial={{ scale: 1 }}
 					whileHover={{ scale: 1.1 }}
@@ -144,7 +123,7 @@ const SideBarNav = () => {
 	return (
 		<section className="c-space">
 			{isTabletAndAbove ? (
-				<div className="fixed top-0 right-[40px] left-[40px] z-50 mt-52 flex flex-col glass !shadow-glass-inset gap-4 justify-between items-center max-w-16 py-3 rounded-xl">
+				<div className="fixed top-0 right-10 left-10 z-50 mt-52 flex flex-col glass !shadow-glass-inset gap-4 justify-between items-center max-w-16 py-3 rounded-xl">
 					{" "}
 					{SIDEBAR_NAVs.map(({ name, icon, href }) => (
 						<SidebarLink

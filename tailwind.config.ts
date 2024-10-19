@@ -9,6 +9,9 @@ module.exports = {
 	darkMode: "class",
 	theme: {
 		extend: {
+			fontFamily: {
+				spaceGrotesk: ["Space Grotesk", "sans-serif"],
+			},
 			colors: {
 				background: "rgb(var(--background))",
 				foreground: "rgb(var(--foreground))",

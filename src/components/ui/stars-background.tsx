@@ -7,6 +7,7 @@ import React, {
 	RefObject,
 	useCallback,
 } from "react";
+import { gsap } from "gsap";
 
 interface StarProps {
 	x: number;
@@ -36,9 +37,9 @@ export const StarsBackground: React.FC<StarBackgroundProps> = ({
 	className,
 }) => {
 	const [stars, setStars] = useState<StarProps[]>([]);
-	const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 	const canvasRef: RefObject<HTMLCanvasElement> =
 		useRef<HTMLCanvasElement>(null);
+	const mousePosition = useRef({ x: 0.5, y: 0.5 }); // Normalized mouse position for GSAP
 
 	const generateStars = useCallback(
 		(width: number, height: number): StarProps[] => {
@@ -75,28 +76,29 @@ export const StarsBackground: React.FC<StarBackgroundProps> = ({
 
 	useEffect(() => {
 		const updateStars = () => {
-			if (canvasRef.current) {
-				const canvas = canvasRef.current;
-				const ctx = canvas.getContext("2d");
-				if (!ctx) return;
+			const canvas = canvasRef.current;
+			if (!canvas) return;
 
-				const { width, height } = canvas.getBoundingClientRect();
-				canvas.width = width;
-				canvas.height = height;
-				setStars(generateStars(width, height));
-			}
+			const ctx = canvas.getContext("2d");
+			if (!ctx) return;
+
+			const { width, height } = canvas.getBoundingClientRect();
+			canvas.width = width;
+			canvas.height = height;
+			setStars(generateStars(width, height));
 		};
 
 		updateStars();
 
 		const resizeObserver = new ResizeObserver(updateStars);
-		if (canvasRef.current) {
-			resizeObserver.observe(canvasRef.current);
+		const canvas = canvasRef.current; // Copy ref to local variable
+		if (canvas) {
+			resizeObserver.observe(canvas);
 		}
 
 		return () => {
-			if (canvasRef.current) {
-				resizeObserver.unobserve(canvasRef.current);
+			if (canvas) {
+				resizeObserver.unobserve(canvas);
 			}
 		};
 	}, [
@@ -108,16 +110,30 @@ export const StarsBackground: React.FC<StarBackgroundProps> = ({
 		generateStars,
 	]);
 
-	// Handle mouse movement to create a parallax effect
-	const handleMouseMove = (e: MouseEvent) => {
-		if (canvasRef.current) {
+	useEffect(() => {
+		const handleMouseMove = (e: MouseEvent) => {
 			const canvas = canvasRef.current;
+			if (!canvas) return;
+
 			const { left, top, width, height } = canvas.getBoundingClientRect();
 			const mouseX = (e.clientX - left) / width;
 			const mouseY = (e.clientY - top) / height;
-			setMousePosition({ x: mouseX, y: mouseY });
-		}
-	};
+
+			// Use GSAP to animate mouse movement
+			gsap.to(mousePosition.current, {
+				x: mouseX,
+				y: mouseY,
+				duration: 0.5,
+				ease: "power3.out",
+			});
+		};
+
+		window.addEventListener("mousemove", handleMouseMove);
+
+		return () => {
+			window.removeEventListener("mousemove", handleMouseMove);
+		};
+	}, []);
 
 	useEffect(() => {
 		const canvas = canvasRef.current;
@@ -132,8 +148,8 @@ export const StarsBackground: React.FC<StarBackgroundProps> = ({
 			ctx.clearRect(0, 0, canvas.width, canvas.height);
 
 			stars.forEach((star) => {
-				const parallaxX = (mousePosition.x - 0.5) * 20; // Adjust parallax sensitivity
-				const parallaxY = (mousePosition.y - 0.5) * 20;
+				const parallaxX = (mousePosition.current.x - 0.5) * 30; // Adjust parallax sensitivity
+				const parallaxY = (mousePosition.current.y - 0.5) * 30;
 
 				const newX = star.initialX + parallaxX;
 				const newY = star.initialY + parallaxY;
@@ -161,15 +177,7 @@ export const StarsBackground: React.FC<StarBackgroundProps> = ({
 		return () => {
 			cancelAnimationFrame(animationFrameId);
 		};
-	}, [stars, mousePosition]);
-
-	useEffect(() => {
-		window.addEventListener("mousemove", handleMouseMove);
-
-		return () => {
-			window.removeEventListener("mousemove", handleMouseMove);
-		};
-	}, []);
+	}, [stars]);
 
 	return (
 		<canvas

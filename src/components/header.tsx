@@ -2,35 +2,22 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import {
-	Fragment,
-	useCallback,
-	useEffect,
-	useMemo,
-	useRef,
-	useState,
-} from "react";
+import { Fragment, useEffect, useRef, useState } from "react";
 import { useMediaQuery } from "react-responsive";
 import { Download, ShieldCheck, Sparkles } from "lucide-react";
 import { gsap } from "gsap";
 
 import MobileNav from "./navbar/mobile-nav";
 import TopBarNav from "./navbar/topbar-nav";
+import { useAudioStore } from "@/store/use-audio-store";
 
 const Header = () => {
 	const [isMounted, setIsMounted] = useState(false);
+	const { playClickSound } = useAudioStore();
+	console.log(playClickSound);
 
 	const isTabletAndAbove = useMediaQuery({ query: "(min-width: 768px)" });
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-	const clickSound = useMemo(
-		() => new Howl({ src: ["/click.mp3"], volume: 0.5 }),
-		[]
-	);
-
-	const handleClick = useCallback(() => {
-		clickSound.play();
-	}, [clickSound]);
 
 	/* Animate logo using gsap */
 	const logoRef = useRef(null);
@@ -78,7 +65,7 @@ const Header = () => {
 					<Fragment>
 						<Link
 							href="/"
-							onClick={handleClick}
+							onClick={playClickSound}
 							className="flex justify-center items-center gap-1.5">
 							<Image
 								src={"/logo.png"}
@@ -117,7 +104,7 @@ const Header = () => {
 					<Fragment>
 						<Link
 							href="/"
-							onClick={handleClick}
+							onClick={playClickSound}
 							className="flex justify-center items-center gap-1.5 z-50">
 							<Image
 								src={"/logo.png"}

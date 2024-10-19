@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
+import BGMusicLayout from "@/components/bg-music-layout";
 
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import Header from "@/components/header";
 import SideBarNav from "@/components/navbar/sidebar-nav";
+import Footer from "@/components/footer";
 
 const geistSans = localFont({
 	src: "./fonts/GeistVF.woff",
@@ -14,6 +16,12 @@ const geistSans = localFont({
 const geistMono = localFont({
 	src: "./fonts/GeistMonoVF.woff",
 	variable: "--font-geist-mono",
+	weight: "100 900",
+});
+
+const spaceGrotesk = localFont({
+	src: "./fonts/SpaceGrotesk[wght].woff2",
+	variable: "--font-space-grotesk",
 	weight: "100 900",
 });
 
@@ -30,15 +38,18 @@ export default function RootLayout({
 	return (
 		<html lang="en">
 			<body
-				className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[#020d1c]`}>
+				className={`${geistSans.variable} ${geistMono.variable} ${spaceGrotesk.variable} antialiased bg-[#020d1c]`}>
 				<ThemeProvider
 					attribute="class"
 					defaultTheme="dark"
 					enableSystem
 					disableTransitionOnChange>
-					<Header />
-					<SideBarNav />
-					{children}
+					<BGMusicLayout>
+						<Header />
+						<SideBarNav />
+						{children}
+						<Footer />
+					</BGMusicLayout>
 				</ThemeProvider>
 			</body>
 		</html>

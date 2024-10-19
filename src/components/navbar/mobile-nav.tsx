@@ -1,9 +1,10 @@
 import { ShieldCheck, Sparkles, Copyright } from "lucide-react";
 import Link from "next/link";
+import { useCallback } from "react";
 
 import { SOCIAL_ICONS } from "@/constants";
 import TopBarNav from "./topbar-nav";
-import { useCallback, useMemo } from "react";
+import { useAudioStore } from "@/store/use-audio-store";
 
 const MobileNav = ({
 	isMenuOpen,
@@ -12,31 +13,12 @@ const MobileNav = ({
 	isMenuOpen: boolean;
 	setIsMenuOpen: (value: boolean) => void;
 }) => {
-
-	const clickSound = useMemo(
-		() => new Howl({ src: ["/click.mp3"], volume: 0.5 }),
-		[]
-	);
-
-	const hoverSound = useMemo(
-		() => new Howl({ src: ["/hover.mp3"], volume: 0.5 }),
-		[]
-	);
-
-	const handleHover = useCallback(() => {
-		hoverSound.play();
-	}, [hoverSound]);
-
-	const handleClick = useCallback(() => {
-		clickSound.play();
-	}, [clickSound]);
+	const { playClickSound, playHoverSound } = useAudioStore();
 
 	const toggleMenu = useCallback(() => {
 		setIsMenuOpen(!isMenuOpen);
-		clickSound.play();
-	}, [setIsMenuOpen, isMenuOpen, clickSound]);
-
-
+		playClickSound();
+	}, [setIsMenuOpen, isMenuOpen, playClickSound]);
 	return (
 		<div className="relative">
 			{/* Custom Hamburger Icon */}
@@ -113,8 +95,8 @@ const MobileNav = ({
 								className="glass !shadow-glass-inset p-3 rounded-full flex justify-center items-center hover:scale-150 transition-all duration-300">
 								<Link
 									href={href}
-									onClick={handleClick}
-									onMouseEnter={handleHover}>
+									onClick={playClickSound}
+									onMouseEnter={playHoverSound}>
 									<Icon className="h-4 w-4 " />
 								</Link>
 							</li>
