@@ -3,6 +3,7 @@
 import { Copyright, Pause, Play } from "lucide-react";
 import React, { useEffect, useState } from "react";
 import { useMediaQuery } from "react-responsive";
+import { motion } from "framer-motion";
 
 import { useAudioStore } from "@/store/use-audio-store";
 
@@ -31,15 +32,27 @@ const Footer = () => {
 					<figure className="mx-0">
 						{isTabletAndAbove ? (
 							<div className="flex items-center space-x-4">
-								<p className="text-sm text-gray-600">
-									SOUND{" "}
-									<span className="text-orange-500">
+								<p className="text-sm text-gray-600 flex items-center">
+									<motion.span
+										className="mr-2"
+										initial={{ opacity: 0, y: 30 }}
+										animate={{ opacity: 1, y: 0 }}
+										transition={{ duration: 0.5 }}
+										key={`sound-${isMuted}`}>
+										SOUND
+									</motion.span>
+									<motion.span
+										className="text-orange-500"
+										initial={{ opacity: 0, x: -30 }}
+										animate={{ opacity: 1, x: 0 }}
+										transition={{ duration: 0.5 }}
+										key={`status-${isMuted}`}>
 										{isMuted ? "OFF" : "ON"}
-									</span>
+									</motion.span>
 								</p>
 								<div
 									className={`h-10 w-10 rounded-full border border-orange-500 flex justify-center items-center ${
-										isMuted ? "" : "animate-pulse"
+										isMuted ? "" : "animate-pulse-rotate"
 									}`}>
 									<div
 										className="relative w-8 h-8 rounded-full glass !shadow-glass-inset cursor-pointer flex items-center justify-center"

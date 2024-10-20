@@ -2,60 +2,28 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { Fragment, useEffect, useRef, useState } from "react";
+import { Fragment, useEffect, useState } from "react";
 import { useMediaQuery } from "react-responsive";
 import { Download, ShieldCheck, Sparkles } from "lucide-react";
-import { gsap } from "gsap";
 
 import MobileNav from "./navbar/mobile-nav";
 import TopBarNav from "./navbar/topbar-nav";
 import { useAudioStore } from "@/store/use-audio-store";
+import MunarayLogoIcon from "./munaray-logo-icon";
 
 const Header = () => {
 	const [isMounted, setIsMounted] = useState(false);
 	const { playClickSound } = useAudioStore();
-	console.log(playClickSound);
 
 	const isTabletAndAbove = useMediaQuery({ query: "(min-width: 768px)" });
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-	/* Animate logo using gsap */
-	const logoRef = useRef(null);
-
 	useEffect(() => {
 		setIsMounted(true);
-		gsap.fromTo(
-			logoRef.current,
-			{
-				opacity: 0,
-				scale: 0.5,
-			},
-			{
-				opacity: 1,
-				scale: 1,
-				duration: 1,
-				ease: "power2.out",
-			}
-		);
 	}, []);
 
-	const handleMouseEnter = () => {
-		gsap.to(logoRef.current, {
-			rotate: 360,
-			duration: 1,
-			ease: "power2.out",
-		});
-	};
-	const handleMouseLeave = () => {
-		gsap.to(logoRef.current, {
-			rotate: 0,
-			duration: 1.5,
-			ease: "power2.out",
-		});
-	};
-
 	if (!isMounted) {
-		return null; // Avoid rendering during the mismatch between server and client
+		return null;
 	}
 
 	return (
@@ -67,16 +35,7 @@ const Header = () => {
 							href="/"
 							onClick={playClickSound}
 							className="flex justify-center items-center gap-1.5">
-							<Image
-								src={"/logo.png"}
-								alt="logo png"
-								height={50}
-								width={50}
-								className="cursor-pointer"
-								ref={logoRef}
-								onMouseEnter={handleMouseEnter}
-								onMouseLeave={handleMouseLeave}
-							/>
+							<MunarayLogoIcon className="text-orange-500" />
 							<div className="text-white font-bold text-2xl hover:text-neutral-400 transition-colors">
 								munaray
 							</div>
@@ -112,9 +71,6 @@ const Header = () => {
 								height={50}
 								width={50}
 								className="cursor-pointer"
-								ref={logoRef}
-								onMouseEnter={handleMouseEnter}
-								onMouseLeave={handleMouseLeave}
 							/>
 						</Link>
 						<TopBarNav

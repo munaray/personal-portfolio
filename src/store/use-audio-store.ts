@@ -18,9 +18,9 @@ export const useAudioStore = create<AudioState>((set) => ({
 			const newMuteState = !state.isMuted;
 			if (state.backgroundMusic) {
 				if (newMuteState) {
-					state.backgroundMusic.pause(); // Pause when muted
+					state.backgroundMusic.pause();
 				} else {
-					state.backgroundMusic.play(); // Resume when unmuted
+					state.backgroundMusic.play();
 				}
 			}
 			return { isMuted: newMuteState };
@@ -29,7 +29,7 @@ export const useAudioStore = create<AudioState>((set) => ({
 	playClickSound: () => {
 		const clickSound = new Howl({
 			src: ["/click.mp3"],
-			volume: 0.5,
+			volume: 0.8,
 		});
 		clickSound.play();
 	},

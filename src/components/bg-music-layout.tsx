@@ -22,7 +22,6 @@ const BGMusicLayout: React.FC<{ children: React.ReactNode }> = ({
 
 	useEffect(() => {
 		const handleVisibilityChange = () => {
-			console.log("Visibility changed:", document.hidden);
 			if (document.visibilityState === "hidden") {
 				backgroundMusic?.pause();
 			} else {

@@ -68,14 +68,14 @@ const Intro: React.FC<{ onExplore: () => void }> = ({ onExplore }) => {
 		<div className="relative" ref={container}>
 			<div
 				id="intro-slider"
-				className="h-screen p-10 bg-orange-500 uppercase absolute top-0 left-0 font-spaceGrotesk font-bold z-[200] w-full flex flex-col justify-center items-center tracking-tight text-4xl md:text-6xl lg:text-7xl">
+				className="h-screen p-10 bg-orange-500 uppercase absolute top-0 left-0 font-spaceGrotesk font-bold z-[200] w-full flex flex-col justify-center items-center tracking-tight text-3xl md:text-6xl lg:text-7xl">
 				<h1 id="title-1" className="invisible opacity-0">
 					Hello There <span className="waving-hand">👋</span>
 				</h1>
-				<h1 id="title-2" className="invisible opacity-0 -mt-10">
-					Am Abdulsalam Sa&apos;ad
+				<h1 id="title-2" className="invisible opacity-0 -mt-20">
+					my name is Abdulsalam Sa&apos;ad
 				</h1>
-				<h1 id="title-3" className="invisible opacity-0 -mt-10">
+				<h1 id="title-3" className="invisible opacity-0 -mt-20">
 					Welcome To My Personal Portfolio
 				</h1>
 			</div>

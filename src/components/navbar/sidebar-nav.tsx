@@ -82,7 +82,6 @@ const SidebarLink = ({
 const SideBarNav = () => {
 	const [isMounted, setIsMounted] = useState(false);
 	const [activeSection, setActiveSection] = useState("#home");
-	console.log(activeSection);
 
 	const isTabletAndAbove = useMediaQuery({ query: "(min-width: 768px)" });
 
