@@ -36,9 +36,9 @@ export default function RootLayout({
 	children: React.ReactNode;
 }>) {
 	return (
-		<html lang="en">
+		<html lang="en" className="overflow-x-hidden">
 			<body
-				className={`${geistSans.variable} ${geistMono.variable} ${spaceGrotesk.variable} antialiased bg-[#020d1c]`}>
+				className={`${geistSans.variable} ${geistMono.variable} ${spaceGrotesk.variable} antialiased bg-[#020d1c] overflow-x-hidden`}>
 				<ThemeProvider
 					attribute="class"
 					defaultTheme="dark"

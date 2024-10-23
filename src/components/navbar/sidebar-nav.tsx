@@ -122,7 +122,7 @@ const SideBarNav = () => {
 	return (
 		<section className="c-space">
 			{isTabletAndAbove ? (
-				<div className="fixed top-0 right-10 left-10 z-50 mt-52 flex flex-col glass !shadow-glass-inset gap-4 justify-between items-center max-w-16 py-3 rounded-xl">
+				<div className="fixed top-[30vh] right-10 left-10 z-50 flex flex-col glass !shadow-glass-inset gap-4 justify-between items-center max-w-16 py-3 rounded-xl">
 					{" "}
 					{SIDEBAR_NAVs.map(({ name, icon, href }) => (
 						<SidebarLink

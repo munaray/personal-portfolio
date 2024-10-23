@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { Fragment, useEffect, useState } from "react";
 import { useMediaQuery } from "react-responsive";
@@ -65,13 +64,7 @@ const Header = () => {
 							href="/"
 							onClick={playClickSound}
 							className="flex justify-center items-center gap-1.5 z-50">
-							<Image
-								src={"/logo.png"}
-								alt="logo png"
-								height={50}
-								width={50}
-								className="cursor-pointer"
-							/>
+							<MunarayLogoIcon className="text-orange-500" />
 						</Link>
 						<TopBarNav
 							href="#cv"

@@ -2,7 +2,7 @@
 
 import { Copyright, Pause, Play } from "lucide-react";
 import React, { useEffect, useState } from "react";
-import { useMediaQuery } from "react-responsive";
+// import { useMediaQuery } from "react-responsive";
 import { motion } from "framer-motion";
 
 import { useAudioStore } from "@/store/use-audio-store";
@@ -10,7 +10,7 @@ import { useAudioStore } from "@/store/use-audio-store";
 const Footer = () => {
 	const [isMounted, setIsMounted] = useState(false);
 	const { isMuted, toggleMute } = useAudioStore();
-	const isTabletAndAbove = useMediaQuery({ query: "(min-width: 768px)" });
+	// const isTabletAndAbove = useMediaQuery({ query: "(min-width: 768px)" });
 
 	useEffect(() => {
 		setIsMounted(true);
@@ -30,26 +30,28 @@ const Footer = () => {
 					</p>
 					{/* Audio Button */}
 					<figure className="mx-0">
-						{isTabletAndAbove ? (
-							<div className="flex items-center space-x-4">
-								<p className="text-sm text-gray-600 flex items-center">
-									<motion.span
-										className="mr-2"
-										initial={{ opacity: 0, y: 30 }}
-										animate={{ opacity: 1, y: 0 }}
-										transition={{ duration: 0.5 }}
-										key={`sound-${isMuted}`}>
-										SOUND
-									</motion.span>
-									<motion.span
-										className="text-orange-500"
-										initial={{ opacity: 0, x: -30 }}
-										animate={{ opacity: 1, x: 0 }}
-										transition={{ duration: 0.5 }}
-										key={`status-${isMuted}`}>
-										{isMuted ? "OFF" : "ON"}
-									</motion.span>
-								</p>
+						<div className="flex items-center space-x-4">
+							<p className="text-sm text-gray-600 hidden md:flex items-center">
+								<motion.span
+									className="mr-2"
+									initial={{ opacity: 0, y: 30 }}
+									animate={{ opacity: 1, y: 0 }}
+									transition={{ duration: 0.5 }}
+									key={`sound-${isMuted}`}>
+									SOUND
+								</motion.span>
+								<motion.span
+									className="text-orange-500"
+									initial={{ opacity: 0, x: -30 }}
+									animate={{ opacity: 1, x: 0 }}
+									transition={{ duration: 0.5 }}
+									key={`status-${isMuted}`}>
+									{isMuted ? "OFF" : "ON"}
+								</motion.span>
+							</p>
+							{/* Footer Buttons for menu-items and pause-play button */}
+							<figure className="w-full h-full flex justify-between items-center">
+								<div className="md:hidden">Menus</div>
 								<div
 									className={`h-10 w-10 rounded-full border border-orange-500 flex justify-center items-center ${
 										isMuted ? "" : "animate-pulse-rotate"
@@ -64,8 +66,8 @@ const Footer = () => {
 										)}
 									</div>
 								</div>
-							</div>
-						) : null}
+							</figure>
+						</div>
 					</figure>
 				</div>
 			</div>

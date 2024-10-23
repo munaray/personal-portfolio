@@ -28,7 +28,7 @@ const StarsAndSpotlight = () => {
 				starDensity={0.0003}
 				twinkleProbability={1}
 				minTwinkleSpeed={0.25}
-				className="bg-[#020d1c] min-h-screen"
+				className="bg-[#020d1c] h-[110vh] lg:min-h-screen"
 			/>
 
 			<ShootingStars
