@@ -68,16 +68,20 @@ const Intro: React.FC<{ onExplore: () => void }> = ({ onExplore }) => {
 		<div className="relative" ref={container}>
 			<div
 				id="intro-slider"
-				className="h-screen p-10 bg-orange-500 uppercase absolute top-0 left-0 font-spaceGrotesk font-bold z-[200] w-full flex flex-col justify-center items-center tracking-tight text-3xl md:text-6xl lg:text-7xl">
-				<h1 id="title-1" className="invisible opacity-0">
-					Hello There <span className="waving-hand">👋</span>
-				</h1>
-				<h1 id="title-2" className="invisible opacity-0 -mt-20">
-					my name is Abdulsalam Sa&apos;ad
-				</h1>
-				<h1 id="title-3" className="invisible opacity-0 -mt-20">
-					Welcome To My Personal Portfolio
-				</h1>
+				className="h-screen bg-orange-500 absolute top-0 left-0 z-[200] w-full flex flex-col justify-center items-center">
+				<div className="uppercase  font-spaceGrotesk text-center font-bold tracking-tight max-w-7xl mx-auto text-3xl md:text-6xl">
+					<h1 id="title-1" className="invisible opacity-0">
+						Hello There <span className="waving-hand">👋</span>
+					</h1>
+					<h1 id="title-2" className="invisible opacity-0 -mt-20">
+						i&apos;m Abdulsalam Sa&apos;ad, it&apos;s great to have
+						you here!
+					</h1>
+					<h1 id="title-3" className="invisible opacity-0 -mt-20">
+						Welcome To My Personal Portfolio where I bring ideas to
+						life.
+					</h1>
+				</div>
 			</div>
 			<div className="h-screen flex place-items-center bg-[#020d1c] overflow-hidden">
 				<button
