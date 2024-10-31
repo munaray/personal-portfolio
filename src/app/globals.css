@@ -155,6 +155,36 @@
 .glowing-btn:hover:after {
   opacity: 1;
 }
+.background-gradient {
+  background: radial-gradient(circle at top center,
+      hsla(222, 80%, 60%, 0.5) 0%,
+      hsla(222, 0%, 0%, 0) 50%,
+      hsla(222, 0%, 0%, 0) 100%);
+}
+
+.globe-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  transition: all 0.3s ease;
+
+  /* Centered for small to medium screens */
+  @media (max-width: 1024px) {
+    width: 100%;
+    height: auto;
+    justify-content: center;
+  }
+
+  /* Positioned on the side for large screens */
+  @media (min-width: 1025px) {
+    width: 50vw;
+    height: 100vh;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 2rem;
+  }
+}
 }
 
 
