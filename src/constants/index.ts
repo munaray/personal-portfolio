@@ -273,7 +273,7 @@ export const techIcons: TechIconsProps[] = [
 			"Data science and machine learning model serving",
 			"Real-time backend services",
 		],
-		href: "",
+		href: "https://fastapi.tiangolo.com/learn/",
 	},
 	{
 		name: "Nuxt",
@@ -287,7 +287,7 @@ export const techIcons: TechIconsProps[] = [
 			"Static site generation",
 			"Progressive web apps with Vue",
 		],
-		href: "",
+		href: "https://learn-dev.nuxt.com/",
 	},
 	{
 		name: "Next",
@@ -301,7 +301,7 @@ export const techIcons: TechIconsProps[] = [
 			"Static websites and blogs",
 			"E-commerce platforms with dynamic content",
 		],
-		href: "",
+		href: "https://nextjs.org/learn",
 	},
 	{
 		name: "Node.js",
@@ -315,7 +315,7 @@ export const techIcons: TechIconsProps[] = [
 			"Real-time applications (e.g., chat apps)",
 			"Server-side scripting and automation tasks",
 		],
-		href: "",
+		href: "https://nodejs.org/docs/latest/api/",
 	},
 	{
 		name: "Express",
@@ -329,13 +329,13 @@ export const techIcons: TechIconsProps[] = [
 			"Web server setup",
 			"Microservices architecture",
 		],
-		href: "",
+		href: "https://www.tutorialspoint.com/expressjs/index.htm",
 	},
 	{
 		name: "NestJS",
 		lat: 13.193887,
 		lng: -59.543198,
-		icon: "/icons/nestjs.png",
+		icon: "/icons/nestjs.svg",
 		details:
 			"NestJS is a progressive Node.js framework for building efficient, reliable, and scalable server-side applications. It uses TypeScript and incorporates OOP, FP, and FRP principles.",
 		useCases: [
@@ -343,27 +343,13 @@ export const techIcons: TechIconsProps[] = [
 			"GraphQL API development",
 			"Microservices and serverless applications",
 		],
-		href: "",
-	},
-	{
-		name: "Fastify",
-		lat: 23.684994,
-		lng: 90.356331,
-		icon: "/icons/fastify.svg",
-		details:
-			"Fastify is a fast, low-overhead web framework for Node.js that focuses on speed and low resource usage. Ideal for highly performant RESTful APIs.",
-		useCases: [
-			"High-performance RESTful APIs",
-			"Real-time applications",
-			"Microservices and lightweight server-side functions",
-		],
-		href: "",
+		href: "https://www.freecodecamp.org/news/comprehensive-nestjs-course/",
 	},
 	{
 		name: "React Native",
 		lat: 50.503887,
 		lng: 4.469936,
-		icon: "/icons/react-native.svg",
+		icon: "/icons/react.svg",
 		details:
 			"React Native is a framework for building native mobile applications using React and JavaScript, enabling cross-platform app development with a single codebase.",
 		useCases: [
@@ -371,7 +357,7 @@ export const techIcons: TechIconsProps[] = [
 			"Native-feel apps using JavaScript",
 			"Apps that need to run on both iOS and Android",
 		],
-		href: "",
+		href: "https://youtu.be/a_SthPXtV6c?si=MMVn0t55vQ8uzm_s",
 	},
 
 	// Databases
@@ -387,7 +373,7 @@ export const techIcons: TechIconsProps[] = [
 			"E-commerce platforms",
 			"Content management systems (CMS)",
 		],
-		href: "",
+		href: "https://youtu.be/h4R-nJbM_ac?si=HLEdeZNbazeQsEJw",
 	},
 	{
 		name: "PostgreSQL",
@@ -401,49 +387,7 @@ export const techIcons: TechIconsProps[] = [
 			"Geospatial data storage (GIS)",
 			"Complex, data-heavy applications",
 		],
-		href: "",
-	},
-	{
-		name: "Oracle",
-		lat: 25.930414,
-		lng: 50.637772,
-		icon: "/icons/oracle.svg",
-		details:
-			"Oracle Database is a multi-model database management system often used by large enterprises for critical applications due to its high scalability, security, and performance.",
-		useCases: [
-			"Enterprise-level applications",
-			"Data warehousing and business intelligence",
-			"Banking and financial systems",
-		],
-		href: "",
-	},
-	{
-		name: "SQL Server",
-		lat: -3.373056,
-		lng: 29.918886,
-		icon: "/icons/sql-server.svg",
-		details:
-			"SQL Server is a relational database management system developed by Microsoft. It offers enterprise-grade database solutions, with a strong integration into the Microsoft ecosystem.",
-		useCases: [
-			"Business intelligence applications",
-			"Enterprise resource planning (ERP) systems",
-			"Corporate data management",
-		],
-		href: "",
-	},
-	{
-		name: "MariaDB",
-		lat: 9.30769,
-		lng: 2.315834,
-		icon: "/icons/mariadb.svg",
-		details:
-			"MariaDB is an open-source relational database management system, a fork of MySQL, with additional features and optimizations. It’s community-driven and compatible with MySQL.",
-		useCases: [
-			"Web applications with high traffic",
-			"Content management systems (CMS)",
-			"E-commerce platforms",
-		],
-		href: "",
+		href: "https://youtu.be/SpfIwlAYaKk?si=ezEissh_QzAywiMw",
 	},
 	{
 		name: "MongoDB",
@@ -457,7 +401,7 @@ export const techIcons: TechIconsProps[] = [
 			"Content management systems (CMS)",
 			"IoT applications and big data",
 		],
-		href: "",
+		href: "https://youtu.be/QPFlGswpyJY?si=N_NXUuxVgGCLoJNg",
 	},
 	{
 		name: "Redis",
@@ -471,7 +415,7 @@ export const techIcons: TechIconsProps[] = [
 			"Session storage in web applications",
 			"Real-time analytics and leaderboard tracking",
 		],
-		href: "",
+		href: "https://youtu.be/dQV0xzOeGzU?si=BVL0HxNbQYfOK8Sg",
 	},
 
 	// Linux Distro
@@ -487,7 +431,7 @@ export const techIcons: TechIconsProps[] = [
 			"Cloud and server infrastructure",
 			"Development and testing environments",
 		],
-		href: "",
+		href: "https://ubuntu.com/",
 	},
 	{
 		name: "Debian",
@@ -501,7 +445,7 @@ export const techIcons: TechIconsProps[] = [
 			"Embedded systems",
 			"Foundation for derivative distros like Ubuntu",
 		],
-		href: "",
+		href: "https://www.debian.org/",
 	},
 	{
 		name: "CentOS",
@@ -515,7 +459,7 @@ export const techIcons: TechIconsProps[] = [
 			"Web hosting",
 			"Data centers",
 		],
-		href: "",
+		href: "https://www.centos.org/",
 	},
 	{
 		name: "Fedora",
@@ -529,7 +473,7 @@ export const techIcons: TechIconsProps[] = [
 			"Testing new technologies",
 			"Open-source software development",
 		],
-		href: "",
+		href: "https://fedoraproject.org/",
 	},
 	{
 		name: "Arch Linux",
@@ -543,7 +487,7 @@ export const techIcons: TechIconsProps[] = [
 			"DIY Linux systems",
 			"Cutting-edge software access",
 		],
-		href: "",
+		href: "https://archlinux.org/",
 	},
 	{
 		name: "Kali Linux",
@@ -557,7 +501,7 @@ export const techIcons: TechIconsProps[] = [
 			"Digital forensics",
 			"Cybersecurity training",
 		],
-		href: "",
+		href: "https://www.kali.org/docs/",
 	},
 
 	// ********************************
@@ -573,7 +517,7 @@ export const techIcons: TechIconsProps[] = [
 			"API-driven applications",
 			"Customizable CMS solutions",
 		],
-		href: "",
+		href: "https://docs.strapi.io/",
 	},
 	{
 		name: "Sanity.io",
@@ -587,7 +531,7 @@ export const techIcons: TechIconsProps[] = [
 			"Structured content storage",
 			"Interactive websites and applications",
 		],
-		href: "",
+		href: "https://www.sanity.io/docs/document-type",
 	},
 	{
 		name: "Convex",
@@ -601,7 +545,7 @@ export const techIcons: TechIconsProps[] = [
 			"Serverless backends",
 			"Live data management",
 		],
-		href: "",
+		href: "https://docs.convex.dev/home",
 	},
 	{
 		name: "Upstash",
@@ -615,7 +559,7 @@ export const techIcons: TechIconsProps[] = [
 			"Streaming data applications",
 			"Serverless databases",
 		],
-		href: "",
+		href: "https://upstash.com/docs/introduction",
 	},
 	{
 		name: "Supabase",
@@ -629,7 +573,7 @@ export const techIcons: TechIconsProps[] = [
 			"Authentication and authorization",
 			"Database-backed applications",
 		],
-		href: "",
+		href: "https://supabase.com/docs",
 	},
 	{
 		name: "Appwrite",
@@ -643,7 +587,7 @@ export const techIcons: TechIconsProps[] = [
 			"Data storage and authentication",
 			"Cloud function execution",
 		],
-		href: "",
+		href: "https://appwrite.io/docs",
 	},
 	{
 		name: "TanStack Query",
@@ -657,7 +601,7 @@ export const techIcons: TechIconsProps[] = [
 			"Server state management",
 			"Caching and synchronization",
 		],
-		href: "",
+		href: "https://youtu.be/3e-higRXoaM?si=mDV5hsQhIYuqG_v3",
 	},
 	{
 		name: "Redux",
@@ -671,13 +615,13 @@ export const techIcons: TechIconsProps[] = [
 			"Complex, interactive UIs",
 			"Data consistency across components",
 		],
-		href: "",
+		href: "https://youtu.be/CI8VeG0GI-M?si=jro8VGHSCXyUrtZl",
 	},
 	{
 		name: "Zustand",
 		lat: -0.228021,
 		lng: 15.827659,
-		icon: "/icons/zustand.svg",
+		icon: "/icons/zustand.png",
 		details:
 			"Zustand is a minimalistic state management library for React applications, focused on simplicity and performance.",
 		useCases: [
@@ -685,7 +629,7 @@ export const techIcons: TechIconsProps[] = [
 			"Simple and modular React apps",
 			"Small, custom stores",
 		],
-		href: "",
+		href: "https://youtu.be/AYO4qHAnLQI?si=OTYyComRpv04yZbR",
 	},
 	{
 		name: "ShadCN",
@@ -699,7 +643,7 @@ export const techIcons: TechIconsProps[] = [
 			"React/Next.js applications",
 			"Rapid UI prototyping",
 		],
-		href: "",
+		href: "https://ui.shadcn.com/docs",
 	},
 	{
 		name: "Expo Router",
@@ -713,7 +657,7 @@ export const techIcons: TechIconsProps[] = [
 			"Expo applications",
 			"Multi-page mobile applications",
 		],
-		href: "",
+		href: "https://docs.expo.dev/",
 	},
 	{
 		name: "TypeScript",
@@ -727,7 +671,7 @@ export const techIcons: TechIconsProps[] = [
 			"Large-scale web applications",
 			"Code refactoring and maintenance",
 		],
-		href: "",
+		href: "https://www.typescriptlang.org/docs/",
 	},
 	{
 		name: "tRPC",
@@ -741,7 +685,7 @@ export const techIcons: TechIconsProps[] = [
 			"TypeScript projects",
 			"Client-server type sharing",
 		],
-		href: "",
+		href: "https://trpc.io/docs",
 	},
 	{
 		name: "GraphQL",
@@ -755,7 +699,7 @@ export const techIcons: TechIconsProps[] = [
 			"Data-rich applications",
 			"Flexible, scalable backends",
 		],
-		href: "",
+		href: "https://graphql.org/learn/",
 	},
 	{
 		name: "Prisma",
@@ -769,35 +713,7 @@ export const techIcons: TechIconsProps[] = [
 			"Node.js applications",
 			"Complex data models and relations",
 		],
-		href: "",
-	},
-	{
-		name: "Drizzle ORM",
-		lat: 4.570868,
-		lng: -74.297333,
-		icon: "/icons/drizzle-orm.svg",
-		details:
-			"Drizzle ORM is a lightweight ORM for TypeScript, focusing on simplicity and developer productivity with an intuitive API.",
-		useCases: [
-			"Type-safe database handling",
-			"TypeScript projects",
-			"Small-to-medium sized apps",
-		],
-		href: "",
-	},
-	{
-		name: "NeonDB",
-		lat: 9.748917,
-		lng: -83.753428,
-		icon: "/icons/neondb.svg",
-		details:
-			"NeonDB is a serverless, scalable Postgres database designed for modern applications needing reliable, cloud-native data storage.",
-		useCases: [
-			"Cloud-native applications",
-			"Serverless architectures",
-			"PostgreSQL-compatible storage",
-		],
-		href: "",
+		href: "https://www.prisma.io/docs",
 	},
 
 	// DEVops Tools
@@ -813,7 +729,7 @@ export const techIcons: TechIconsProps[] = [
 			"Microservices architecture",
 			"Simplifying development and deployment",
 		],
-		href: "",
+		href: "https://youtu.be/RqTEHSBrYFw?si=K7hSV6ONlSC52BcK",
 	},
 	{
 		name: "Kubernetes",
@@ -827,7 +743,7 @@ export const techIcons: TechIconsProps[] = [
 			"Scaling applications",
 			"Cloud-native infrastructure",
 		],
-		href: "",
+		href: "https://youtu.be/2T86xAtR6Fo?si=CoLYNyXxho9pAAle",
 	},
 	{
 		name: "Ansible",
@@ -841,7 +757,7 @@ export const techIcons: TechIconsProps[] = [
 			"Continuous deployment",
 			"Orchestration and provisioning",
 		],
-		href: "",
+		href: "https://youtube.com/playlist?list=PLT98CRl2KxKEUHie1m24-wkyHpEsa4Y70&si=sdRjvGaYqNpjzZcn",
 	},
 	{
 		name: "Terraform",
@@ -855,7 +771,7 @@ export const techIcons: TechIconsProps[] = [
 			"Automated provisioning",
 			"Multi-cloud deployments",
 		],
-		href: "",
+		href: "https://youtu.be/7xngnjfIlK4?si=XaJB-jn6DHA7UtLg",
 	},
 	{
 		name: "Jenkins",
@@ -869,7 +785,7 @@ export const techIcons: TechIconsProps[] = [
 			"Automated testing and building",
 			"Pipeline management",
 		],
-		href: "",
+		href: "https://www.jenkins.io/doc/tutorials/",
 	},
 	{
 		name: "GitHub Actions",
@@ -883,7 +799,7 @@ export const techIcons: TechIconsProps[] = [
 			"CI/CD for GitHub projects",
 			"Custom automation actions",
 		],
-		href: "",
+		href: "https://youtu.be/TLB5MY9BBa4?si=7xEJ4liWdEA-Kr0G",
 	},
 	{
 		name: "Prometheus",
@@ -897,7 +813,7 @@ export const techIcons: TechIconsProps[] = [
 			"Time-series data collection",
 			"Metrics-based monitoring",
 		],
-		href: "",
+		href: "https://prometheus.io/docs/tutorials/",
 	},
 	{
 		name: "Grafana",
@@ -911,7 +827,7 @@ export const techIcons: TechIconsProps[] = [
 			"Custom monitoring dashboards",
 			"Real-time metrics tracking",
 		],
-		href: "",
+		href: "https://grafana.com/tutorials/",
 	},
 	{
 		name: "Elasticsearch",
@@ -925,7 +841,7 @@ export const techIcons: TechIconsProps[] = [
 			"Log and data analysis",
 			"Real-time data indexing",
 		],
-		href: "",
+		href: "https://youtu.be/kjN7mV5POXc?si=1NUt0PK543AdBbUE",
 	},
 	{
 		name: "Logstash",
@@ -939,7 +855,7 @@ export const techIcons: TechIconsProps[] = [
 			"Log management",
 			"Centralized data processing",
 		],
-		href: "",
+		href: "https://www.tutorialspoint.com/logstash/index.htm",
 	},
 	{
 		name: "Kibana",
@@ -953,7 +869,7 @@ export const techIcons: TechIconsProps[] = [
 			"Log and metric dashboards",
 			"Exploratory data analysis",
 		],
-		href: "",
+		href: "https://youtu.be/DVgKDPf7hOU?si=vK0tyv4QcJGHvCa8",
 	},
 	{
 		name: "Git",
@@ -967,7 +883,7 @@ export const techIcons: TechIconsProps[] = [
 			"Collaboration on code",
 			"Source code history tracking",
 		],
-		href: "",
+		href: "https://youtu.be/S7XpTAnSDL4?si=f1of36qSJ_T841QY",
 	},
 
 	// AI Frameworks
@@ -983,7 +899,7 @@ export const techIcons: TechIconsProps[] = [
 			"Natural language processing (NLP)",
 			"Building custom AI models",
 		],
-		href: "",
+		href: "https://www.tensorflow.org/learn",
 	},
 	{
 		name: "PyTorch",
@@ -997,7 +913,7 @@ export const techIcons: TechIconsProps[] = [
 			"Computer vision",
 			"NLP and reinforcement learning",
 		],
-		href: "",
+		href: "https://pytorch.org/",
 	},
 	{
 		name: "Hugging Face",
@@ -1011,7 +927,7 @@ export const techIcons: TechIconsProps[] = [
 			"Language translation",
 			"Sentiment analysis and chatbots",
 		],
-		href: "",
+		href: "https://huggingface.co/",
 	},
 	{
 		name: "OpenAI",
@@ -1025,7 +941,7 @@ export const techIcons: TechIconsProps[] = [
 			"Image creation",
 			"AI-driven customer service",
 		],
-		href: "",
+		href: "https://openai.com/",
 	},
 	{
 		name: "LangChain",
@@ -1039,7 +955,7 @@ export const techIcons: TechIconsProps[] = [
 			"Multi-step AI workflows",
 			"Language model integration",
 		],
-		href: "",
+		href: "https://www.langchain.com/",
 	},
 	{
 		name: "Keras",
@@ -1053,91 +969,7 @@ export const techIcons: TechIconsProps[] = [
 			"Image classification",
 			"Medical and health data modeling",
 		],
-		href: "",
-	},
-	{
-		name: "Caffe",
-		lat: 9.145,
-		lng: 40.489673,
-		icon: "/icons/caffe.svg",
-		details:
-			"Caffe is a deep learning framework known for its speed and efficient use of computing resources, making it popular for computer vision tasks.",
-		useCases: [
-			"Image classification",
-			"Object detection",
-			"Real-time applications",
-		],
-		href: "",
-	},
-	{
-		name: "MXNet",
-		lat: 61.92411,
-		lng: 25.748151,
-		icon: "/icons/mxnet.svg",
-		details:
-			"MXNet is a deep learning framework that supports flexible programming and distributed computing, often used by AWS as the default engine for deep learning.",
-		useCases: [
-			"Distributed deep learning",
-			"Computer vision",
-			"NLP applications",
-		],
-		href: "",
-	},
-	{
-		name: "JAX",
-		lat: -16.578193,
-		lng: 179.414413,
-		icon: "/icons/jax.svg",
-		details:
-			"JAX is a high-performance library for numerical computing, often used for machine learning research involving transformations and hardware acceleration.",
-		useCases: [
-			"High-performance computing",
-			"Machine learning model training",
-			"Mathematical research",
-		],
-		href: "",
-	},
-	{
-		name: "TFLite",
-		lat: -51.796253,
-		lng: -59.523613,
-		icon: "/icons/tflite.svg",
-		details:
-			"TensorFlow Lite (TFLite) is a framework for running lightweight machine learning models on mobile and embedded devices.",
-		useCases: [
-			"Mobile machine learning",
-			"Embedded AI applications",
-			"On-device inference",
-		],
-		href: "",
-	},
-	{
-		name: "FastAI",
-		lat: 7.425554,
-		lng: 150.550812,
-		icon: "/icons/fastai.svg",
-		details:
-			"FastAI is a user-friendly library built on top of PyTorch, designed to simplify complex deep learning applications and tasks.",
-		useCases: [
-			"Quick AI model prototyping",
-			"Image classification",
-			"AI education and training",
-		],
-		href: "",
-	},
-	{
-		name: "AlphaFold",
-		lat: 61.892635,
-		lng: -6.911806,
-		icon: "/icons/alphafold.svg",
-		details:
-			"DeepMind's AlphaFold is an AI system for predicting protein structures, greatly aiding research in biology and medicine.",
-		useCases: [
-			"Protein structure prediction",
-			"Medical and biological research",
-			"Drug discovery",
-		],
-		href: "",
+		href: "https://keras.io/",
 	},
 	{
 		name: "MindSpore",
@@ -1151,21 +983,7 @@ export const techIcons: TechIconsProps[] = [
 			"Cloud-edge collaboration",
 			"AI model optimization",
 		],
-		href: "",
-	},
-	{
-		name: "Gemini AI",
-		lat: -0.803689,
-		lng: 11.609444,
-		icon: "/icons/gemini.svg",
-		details:
-			"Gemini AI by Google DeepMind is a general-purpose AI framework, enabling the development of multimodal models for various advanced tasks.",
-		useCases: [
-			"General AI applications",
-			"Advanced multimodal models",
-			"Cutting-edge AI research",
-		],
-		href: "",
+		href: "https://www.mindspore.cn/en",
 	},
 
 	// 3D and Graphics designs tools
@@ -1181,7 +999,7 @@ export const techIcons: TechIconsProps[] = [
 			"Game development",
 			"Visual effects",
 		],
-		href: "",
+		href: "https://youtube.com/playlist?list=PLVCPek9hlB-Q6lBMTfnviZkIWqItUegK2&si=lf74v4htBK1ZKaN-",
 	},
 	{
 		name: "Adobe Illustrator",
@@ -1191,7 +1009,7 @@ export const techIcons: TechIconsProps[] = [
 		details:
 			"Adobe Illustrator is a vector graphics editor ideal for creating logos, icons, and complex illustrations with scalable vector assets.",
 		useCases: ["Logo design", "Illustrations", "Typography"],
-		href: "",
+		href: "https://youtu.be/3RTqLQ1MaQU?si=a8eX6EY4dF-2F8l-",
 	},
 	{
 		name: "Adobe Photoshop",
@@ -1201,21 +1019,7 @@ export const techIcons: TechIconsProps[] = [
 		details:
 			"Adobe Photoshop is an industry-standard tool for photo editing, graphic design, and digital art, known for its robust tools for image manipulation.",
 		useCases: ["Photo editing", "Digital painting", "Graphic design"],
-		href: "",
-	},
-	{
-		name: "Cinema 4D",
-		lat: 3.933889,
-		lng: -53.125782,
-		icon: "/icons/cinema4d.svg",
-		details:
-			"Cinema 4D is a professional 3D software suite used in motion graphics, visual effects, and 3D animation. It's known for its integration with other Adobe products.",
-		useCases: [
-			"Motion graphics",
-			"3D animation",
-			"Visual effects in media",
-		],
-		href: "",
+		href: "https://youtu.be/ZbvLJ5XtPpA?si=S8eR8iEz9ZGp4Y02",
 	},
 	{
 		name: "SketchUp",
@@ -1229,7 +1033,7 @@ export const techIcons: TechIconsProps[] = [
 			"Interior design",
 			"Landscape architecture",
 		],
-		href: "",
+		href: "https://youtu.be/tkLfb-fuMSM?si=lvrxC9c70l6B2h3l",
 	},
 	{
 		name: "Autodesk Maya",
@@ -1243,21 +1047,7 @@ export const techIcons: TechIconsProps[] = [
 			"Game development",
 			"3D modeling and rendering",
 		],
-		href: "",
-	},
-	{
-		name: "Fusion 360",
-		lat: 36.137741,
-		lng: -5.345374,
-		icon: "/icons/fusion360.svg",
-		details:
-			"Fusion 360 is a cloud-based 3D CAD, CAM, and CAE tool for product design and manufacturing, used widely in engineering.",
-		useCases: [
-			"Product design",
-			"3D CAD modeling",
-			"Manufacturing simulation",
-		],
-		href: "",
+		href: "https://youtube.com/playlist?list=PLsPHRLf6UN4k0_AfrTzLmK4iDV9J97-qR&si=AZO_NL68lRiiQalR",
 	},
 	{
 		name: "Figma",
@@ -1267,7 +1057,7 @@ export const techIcons: TechIconsProps[] = [
 		details:
 			"Figma is a collaborative interface design tool, popular for UI/UX design and prototyping with real-time team collaboration.",
 		useCases: ["UI/UX design", "Prototyping", "Collaborative design work"],
-		href: "",
+		href: "https://youtube.com/playlist?list=PLpKyNBYcYNJec4bUTVZUqxBQF5ezd96RT&si=V86TZV4ElVucHjlU",
 	},
 	{
 		name: "Adobe XD",
@@ -1277,7 +1067,7 @@ export const techIcons: TechIconsProps[] = [
 		details:
 			"Adobe XD is a user experience design software for creating wireframes, prototypes, and UI designs with seamless Adobe integration.",
 		useCases: ["UI/UX prototyping", "Wireframing", "Design collaboration"],
-		href: "",
+		href: "https://youtu.be/f2K1jmjj5pM?si=gGMl6KEwayD6DP5d",
 	},
 	{
 		name: "Adobe InDesign",
@@ -1291,7 +1081,7 @@ export const techIcons: TechIconsProps[] = [
 			"Magazines and books",
 			"Brochure design",
 		],
-		href: "",
+		href: "https://youtu.be/BuE8JpajmgY?si=XwWOPK83dLTqURfd",
 	},
 	{
 		name: "Audacity",
@@ -1305,7 +1095,7 @@ export const techIcons: TechIconsProps[] = [
 			"Podcast production",
 			"Sound mixing and mastering",
 		],
-		href: "",
+		href: "https://youtu.be/HnUbWYfavXY?si=uCH6-Z9FomsMIc60",
 	},
 
 	// Cloud Services
@@ -1321,13 +1111,13 @@ export const techIcons: TechIconsProps[] = [
 			"Big data processing",
 			"Machine learning and AI applications",
 		],
-		href: "",
+		href: "https://aws.amazon.com/id/education/awseducate/",
 	},
 	{
 		name: "Google Cloud",
 		lat: 39.074208,
 		lng: 21.824312,
-		icon: "/icons/google-cloud.svg",
+		icon: "/icons/gcp.svg",
 		details:
 			"Google Cloud provides cloud computing services to build, deploy, and scale applications. Known for its robust data analytics and machine learning capabilities.",
 		useCases: [
@@ -1335,7 +1125,7 @@ export const techIcons: TechIconsProps[] = [
 			"Application development",
 			"AI and machine learning",
 		],
-		href: "",
+		href: "https://cloud.google.com/learn/training?hl=en",
 	},
 	{
 		name: "Microsoft Azure",
@@ -1349,7 +1139,7 @@ export const techIcons: TechIconsProps[] = [
 			"Hybrid cloud solutions",
 			"AI and machine learning",
 		],
-		href: "",
+		href: "https://learn.microsoft.com/en-us/training/azure/",
 	},
 
 	// BlockChain
@@ -1365,7 +1155,7 @@ export const techIcons: TechIconsProps[] = [
 			"Smart contract development",
 			"Token creation (ERC-20, ERC-721)",
 		],
-		href: "",
+		href: "https://cryptozombies.io/en/course/",
 	},
 	{
 		name: "Rust",
@@ -1378,7 +1168,7 @@ export const techIcons: TechIconsProps[] = [
 			"High-performance blockchain applications",
 			"Smart contracts on Solana",
 		],
-		href: "",
+		href: "https://www.rust-lang.org/learn",
 	},
 	{
 		name: "Truffle",
@@ -1391,7 +1181,7 @@ export const techIcons: TechIconsProps[] = [
 			"Smart contract deployment",
 			"Testing blockchain applications",
 		],
-		href: "",
+		href: "https://archive.trufflesuite.com/docs/",
 	},
 	{
 		name: "Hardhat",
@@ -1401,7 +1191,7 @@ export const techIcons: TechIconsProps[] = [
 		details:
 			"Hardhat is a development environment for Ethereum developers, with a strong emphasis on debugging and testing.",
 		useCases: ["Blockchain testing", "Smart contract deployment"],
-		href: "",
+		href: "https://hardhat.org/docs",
 	},
 	{
 		name: "Mocha",
@@ -1414,20 +1204,20 @@ export const techIcons: TechIconsProps[] = [
 			"Blockchain application testing",
 			"Smart contract validation",
 		],
-		href: "",
+		href: "https://dev.to/kwamedev/unit-testing-with-mocha-chai-4gdh",
 	},
 	{
 		name: "Chai",
 		lat: 22.396428,
 		lng: 114.109497,
-		icon: "/icons/chai.svg",
+		icon: "/icons/chai.png",
 		details:
 			"Chai is an assertion library used with Mocha for testing JavaScript applications, popular in blockchain testing environments.",
 		useCases: [
 			"Unit testing for smart contracts",
 			"Blockchain application testing",
 		],
-		href: "",
+		href: "https://dev.to/kwamedev/unit-testing-with-mocha-chai-4gdh",
 	},
 	{
 		name: "web3.js",
@@ -1437,7 +1227,7 @@ export const techIcons: TechIconsProps[] = [
 		details:
 			"web3.js is a JavaScript library that interacts with the Ethereum blockchain and enables transactions.",
 		useCases: ["Blockchain integration", "DApp development"],
-		href: "",
+		href: "https://docs.web3js.org/",
 	},
 	{
 		name: "ethers.js",
@@ -1447,7 +1237,7 @@ export const techIcons: TechIconsProps[] = [
 		details:
 			"ethers.js is a library that provides utilities for interacting with the Ethereum blockchain, including wallet support.",
 		useCases: ["Ethereum wallet integration", "Smart contract interaction"],
-		href: "",
+		href: "https://youtu.be/yk7nVp5HTCk?si=JrariN34A6ZZaNbp",
 	},
 	{
 		name: "Ethereum",
@@ -1457,17 +1247,7 @@ export const techIcons: TechIconsProps[] = [
 		details:
 			"Ethereum is a decentralized platform that enables the deployment of smart contracts and decentralized applications (DApps).",
 		useCases: ["DApp development", "Smart contract deployment"],
-		href: "",
-	},
-	{
-		name: "Hyperledger Fabric",
-		lat: 18.971187,
-		lng: -72.285215,
-		icon: "/icons/hyperledger.svg",
-		details:
-			"Hyperledger Fabric is a permissioned blockchain framework used primarily for enterprise-level applications.",
-		useCases: ["Private blockchain solutions", "Supply chain management"],
-		href: "",
+		href: "https://ethereum.org/en/",
 	},
 	{
 		name: "Polkadot",
@@ -1480,7 +1260,7 @@ export const techIcons: TechIconsProps[] = [
 			"Cross-chain interoperability",
 			"Decentralized finance (DeFi)",
 		],
-		href: "",
+		href: "https://polkadot.com/",
 	},
 	{
 		name: "Solana",
@@ -1490,7 +1270,7 @@ export const techIcons: TechIconsProps[] = [
 		details:
 			"Solana is a high-performance blockchain platform known for its scalability, ideal for decentralized finance and Web3 applications.",
 		useCases: ["DeFi applications", "High-speed DApps"],
-		href: "",
+		href: "https://youtube.com/playlist?list=PLilwLeBwGuK7HN8ZnXpGAD9q6i4syhnVc&si=7XnBNKGIxJ34lOTG",
 	},
 	{
 		name: "MetaMask",
@@ -1500,7 +1280,7 @@ export const techIcons: TechIconsProps[] = [
 		details:
 			"MetaMask is a browser extension wallet that allows users to interact with the Ethereum blockchain and manage their cryptocurrency assets.",
 		useCases: ["User wallet management", "Web3 DApp interactions"],
-		href: "",
+		href: "https://metamask.io/",
 	},
 	{
 		name: "WalletConnect",
@@ -1510,17 +1290,7 @@ export const techIcons: TechIconsProps[] = [
 		details:
 			"WalletConnect is a protocol that allows users to connect their wallets to DApps on various platforms via QR code or deep linking.",
 		useCases: ["Mobile wallet connectivity", "DApp interactions"],
-		href: "",
-	},
-	{
-		name: "Phantom",
-		lat: 54.236107,
-		lng: -4.548056,
-		icon: "/icons/phantom.svg",
-		details:
-			"Phantom is a cryptocurrency wallet tailored for the Solana blockchain, allowing users to store, send, and receive assets.",
-		useCases: ["Solana wallet management", "NFT and DeFi support"],
-		href: "",
+		href: "https://explorer.walletconnect.com/",
 	},
 	{
 		name: "Etherscan",
@@ -1530,17 +1300,7 @@ export const techIcons: TechIconsProps[] = [
 		details:
 			"Etherscan is a blockchain explorer for Ethereum, allowing users to track transactions, token balances, and smart contract details.",
 		useCases: ["Transaction tracking", "Smart contract verification"],
-		href: "",
-	},
-	{
-		name: "Dune Analytics",
-		lat: -6.343194,
-		lng: 71.876519,
-		icon: "/icons/dune.svg",
-		details:
-			"Dune Analytics is a platform for analyzing Ethereum data, enabling users to visualize and share blockchain analytics.",
-		useCases: ["Blockchain data analysis", "DeFi metrics tracking"],
-		href: "",
+		href: "https://etherscan.io/",
 	},
 	{
 		name: "Alchemy",
@@ -1550,7 +1310,7 @@ export const techIcons: TechIconsProps[] = [
 		details:
 			"Alchemy is a blockchain development platform providing tools and infrastructure for building decentralized applications.",
 		useCases: ["DApp development", "Blockchain infrastructure"],
-		href: "",
+		href: "https://www.alchemy.com/",
 	},
 	{
 		name: "Infura",
@@ -1560,7 +1320,7 @@ export const techIcons: TechIconsProps[] = [
 		details:
 			"Infura provides scalable Ethereum and IPFS infrastructure, allowing developers to connect to the blockchain without hosting full nodes.",
 		useCases: ["Blockchain connectivity", "Decentralized storage"],
-		href: "",
+		href: "https://www.infura.io/",
 	},
 	{
 		name: "Chainlink",
@@ -1570,6 +1330,6 @@ export const techIcons: TechIconsProps[] = [
 		details:
 			"Chainlink is a decentralized oracle network that allows smart contracts to securely interact with real-world data and external APIs.",
 		useCases: ["Smart contract oracles", "Data integration for DeFi"],
-		href: "",
+		href: "https://docs.chain.link/",
 	},
 ];
