@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
-import BGMusicLayout from "@/components/bg-music-layout";
 
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
+import BGMusicLayout from "@/components/bg-music-layout";
+import { Providers } from "@/components/parallax-provider";
 import Header from "@/components/header";
 import SideBarNav from "@/components/navbar/sidebar-nav";
 import Footer from "@/components/footer";
@@ -45,10 +46,12 @@ export default function RootLayout({
 					enableSystem
 					disableTransitionOnChange>
 					<BGMusicLayout>
-						<Header />
-						<SideBarNav />
-						{children}
-						<Footer />
+						<Providers>
+							<Header />
+							<SideBarNav />
+							{children}
+							<Footer />
+						</Providers>
 					</BGMusicLayout>
 				</ThemeProvider>
 			</body>

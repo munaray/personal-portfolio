@@ -1,19 +1,13 @@
 "use client";
 
-import React, { useCallback, useEffect, useState } from "react";
+import React, { Fragment, useEffect, useState } from "react";
 import { useMediaQuery } from "react-responsive";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
 import { LucideIcon } from "lucide-react";
-import { gsap } from "gsap";
-import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 import { motion } from "framer-motion";
 
-
-import { SIDEBAR_NAVs } from "@/constants";
+import { SIDEBAR_NAVs, SOCIAL_ICONS } from "@/constants";
 import { useAudioStore } from "@/store/use-audio-store";
-
-gsap.registerPlugin(ScrollToPlugin);
 
 interface SidebarLinkProps {
 	href: string;
@@ -28,25 +22,18 @@ const SidebarLink = ({
 	name,
 	isActive,
 }: SidebarLinkProps) => {
-	const router = useRouter();
 	const { playClickSound, playHoverSound } = useAudioStore();
 
-	const handleScrollTo = useCallback(
-		(e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
-			e.preventDefault();
+	const handleScrollTo = (event: React.SyntheticEvent) => {
+		event.preventDefault();
+		playClickSound();
 
-			playClickSound();
-
-			gsap.to(window, {
-				duration: 1.5,
-				scrollTo: href,
-				ease: "power2.inOut",
-			});
-
-			router.push(href);
-		},
-		[playClickSound, href, router]
-	);
+		const targetId = href.replace("#", "");
+		const element = document.getElementById(targetId);
+		element?.scrollIntoView({
+			behavior: "smooth",
+		});
+	};
 
 	return (
 		<div
@@ -67,11 +54,7 @@ const SidebarLink = ({
 					}`}>
 					<div>
 						<Icon className="w-4 h-4" />
-
-						<span
-							className={`font-medium tex	const [isMounted, setIsMounted] = useState(t-gray-700`}>
-							{name}
-						</span>
+						<span>{name}</span>
 					</div>
 				</motion.div>
 			</Link>
@@ -82,11 +65,12 @@ const SidebarLink = ({
 const SideBarNav = () => {
 	const [isMounted, setIsMounted] = useState(false);
 	const [activeSection, setActiveSection] = useState("#home");
-
+	const { playClickSound, playHoverSound } = useAudioStore();
 	const isTabletAndAbove = useMediaQuery({ query: "(min-width: 768px)" });
 
 	useEffect(() => {
 		setIsMounted(true);
+
 		const handleScroll = () => {
 			const scrollPosition = window.scrollY + window.innerHeight / 2;
 
@@ -104,35 +88,43 @@ const SideBarNav = () => {
 			});
 		};
 
-		const { hash } = window.location;
-		if (hash) {
-			setActiveSection(hash);
-		}
-
 		window.addEventListener("scroll", handleScroll);
-
-		return () => {
-			window.removeEventListener("scroll", handleScroll);
-		};
+		return () => window.removeEventListener("scroll", handleScroll);
 	}, []);
 
-	if (!isMounted) {
-		return null;
-	}
+	if (!isMounted) return null;
+
 	return (
 		<section className="c-space">
 			{isTabletAndAbove ? (
-				<div className="fixed top-[30vh] right-10 left-10 z-50 flex flex-col glass !shadow-glass-inset gap-4 justify-between items-center max-w-16 py-3 rounded-xl">
-					{" "}
-					{SIDEBAR_NAVs.map(({ name, icon, href }) => (
-						<SidebarLink
-							key={name}
-							href={href}
-							icon={icon}
-							isActive={activeSection === href}
-						/>
-					))}
-				</div>
+				<Fragment>
+					<div
+						className={`fixed top-[30vh] -left-14 z-50 flex flex-col glass !shadow-glass-inset gap-4 justify-between items-center max-w-16 pl-10 pr-7 py-3 rounded-xl transform hover:-left-4 hover:cursor-pointer duration-1000`}>
+						{SIDEBAR_NAVs.map(({ name, icon, href }) => (
+							<SidebarLink
+								key={name}
+								href={href}
+								icon={icon}
+								isActive={activeSection === href}
+							/>
+						))}
+					</div>
+					<ul
+						className={`fixed top-[22vh] -right-12 z-50 flex flex-col glass !shadow-glass-inset gap-4 justify-between items-center max-w-16 pr-5 pl-2 py-3 rounded-xl transform hover:-right-4 hover:cursor-pointer duration-1000`}>
+						{SOCIAL_ICONS.map(({ name, icon: Icon, href }) => (
+							<li
+								key={name}
+								className="glass !shadow-glass-inset p-1.5 rounded-full flex justify-center items-center hover:!shadow-glass-sm transition-all duration-1000">
+								<Link
+									href={href}
+									onClick={playClickSound}
+									onMouseEnter={playHoverSound}>
+									<Icon className="h-4 w-4 " />
+								</Link>
+							</li>
+						))}
+					</ul>
+				</Fragment>
 			) : null}
 		</section>
 	);

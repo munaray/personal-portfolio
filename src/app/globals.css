@@ -170,14 +170,14 @@
   transition: all 0.3s ease;
 
   /* Centered for small to medium screens */
-  @media (max-width: 1024px) {
+  @media (max-width: 1029px) {
     width: 100%;
     height: auto;
     justify-content: center;
   }
 
   /* Positioned on the side for large screens */
-  @media (min-width: 1025px) {
+    @media (min-width: 1030px) {
     width: 50vw;
     height: 100vh;
     justify-content: flex-start;

@@ -21,7 +21,7 @@ module.exports = {
 
 			boxShadow: {
 				"glass-1-inset": "inset 0 17px 5px -9px rgba(255, 60, 0, 0.05)",
-				"glass-sm": "5px 5px 20px 0px rgba(255, 60, 0, 0.3)",
+				"glass-sm": "inset 5px 5px 20px 0px rgba(255, 60, 0, 0.3)",
 				"glass-inset":
 					"inset 5px 5px 20px 0px rgba(255, 255, 255, 0.18)",
 			},
@@ -71,6 +71,7 @@ module.exports = {
 			},
 			screens: {
 				xs: "480px",
+				lg: "1030px",
 			},
 		},
 	},

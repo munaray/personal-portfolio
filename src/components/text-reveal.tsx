@@ -1,5 +1,6 @@
-// components/TextReveal.tsx
-import * as React from "react";
+"use client";
+
+import { useRef } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -16,7 +17,7 @@ const TextReveal: React.FC<TextRevealProps> = ({
 	children,
 	triggerOnScroll,
 }) => {
-	const textRef = React.useRef<HTMLDivElement>(null);
+	const textRef = useRef<HTMLDivElement>(null);
 
 	useGSAP(() => {
 		const textElement = textRef.current;
