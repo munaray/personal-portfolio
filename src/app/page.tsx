@@ -3,8 +3,9 @@ import About from "./(sections)/about";
 
 export default function Home() {
 	return (
-		<main className="w-full">
+		<main>
 			<Hero />
+			<div style={{ height: "10vh" }}></div>
 			<About />
 		</main>
 	);

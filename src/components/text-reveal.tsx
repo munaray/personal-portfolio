@@ -38,46 +38,74 @@ const TextReveal: React.FC<TextRevealProps> = ({
 			  ) as HTMLElement[])
 			: [];
 
+		const matchMedia = gsap.matchMedia();
+
+		matchMedia.add("(min-width: 768px)", () => {
+			// For medium screens and above
+			if (triggerOnScroll) {
+				gsap.to(filledWords, {
+					backgroundPosition: "-100% 0%",
+					duration: 1.7,
+					stagger: 2,
+					ease: "linear",
+					scrollTrigger: {
+						trigger: textElement,
+						scrub: 1.7,
+						start: "top top",
+						end: "bottom+=110% top",
+						markers: false,
+					},
+				});
+			} else {
+				gsap.to(filledWords, {
+					color: "inherit",
+					duration: 1.5,
+					stagger: 0.1,
+					delay: 2,
+					ease: "power1.out",
+				});
+			}
+		});
+
+		matchMedia.add("(max-width: 767px)", () => {
+			// For smaller screens
+			if (triggerOnScroll) {
+				gsap.to(filledWords, {
+					backgroundPosition: "-100% 0%",
+					duration: 1.7,
+					stagger: 2,
+					ease: "linear",
+					scrollTrigger: {
+						trigger: textElement,
+						scrub: 1.7,
+						start: "top-=110% top",
+						end: "bottom+=150% top",
+						markers: false,
+					},
+				});
+			} else {
+				gsap.to(filledWords, {
+					color: "inherit",
+					duration: 1.5,
+					stagger: 0.1,
+					delay: 2,
+					ease: "power1.out",
+				});
+			}
+		});
+
+		// Styling adjustments
 		filledWords.forEach((word) => {
+			word.style.background =
+				"linear-gradient(to left, rgb(255, 255, 255) 50%, rgb(30, 30, 30) 50%)";
+			word.style.backgroundSize = "200% 100%";
 			word.style.color = "transparent";
+			word.style.backgroundClip = "text";
 			word.style.display = "inline-block";
 			word.style.whiteSpace = "pre-wrap";
 		});
 
-		if (triggerOnScroll) {
-			gsap.to(filledWords, {
-				color: "inherit",
-				duration: 1.5,
-				stagger: 0.1,
-				ease: "power1.out",
-				scrollTrigger: {
-					trigger: textElement,
-					scrub: false,
-					start: "top 80%",
-					end: "top 50%",
-					markers: false,
-				},
-			});
-		} else {
-			gsap.to(filledWords, {
-				color: "inherit",
-				duration: 1.5,
-				stagger: 0.1,
-				delay: 2,
-				ease: "power1.out",
-			});
-		}
-
-		// filledWords.forEach((word) => {
-		// 	word.style.position = "relative"; // Prevents background bleed
-		// 	word.style.backgroundImage =
-		// 		"linear-gradient(to left, rgb(255, 255, 255) 50%, rgba(30, 30, 30, 0.8) 50%)";
-		// 	word.style.backgroundSize = "200% 100%";
-		// 	word.style.color = "inherit"; // Maintain your original colors
-		// 	word.style.backgroundClip = "text"; // No need for webkit prefix
-		// 	word.style.display = "inline-block";
-		// 	word.style.whiteSpace = "pre-wrap";
-		// });
+		return () => matchMedia.revert(); // Clean up on unmount
 	}, []);
 
 	return <div ref={textRef}>{children}</div>;
